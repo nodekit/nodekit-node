@@ -1,0 +1,20 @@
+{
+  "name": "nodekit",
+  "version": "0.1.0",
+  "author": "Szikszai Gusztáv <guszti5@hotmail.com>",
+  "description": "",
+  "scripts": {
+    "test": "cucumber.js"
+  },
+  "main": "./lib/inkit",
+  "dependencies" : {
+    "request" :  "*",
+    "cucumber":  "*",
+    "hogan": "*"
+  },
+  "noAnalyze": true,
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.6"
+  }
+}

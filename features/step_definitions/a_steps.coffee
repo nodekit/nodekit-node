@@ -19,7 +19,7 @@ test = (type,code) ->
 steps = ->
   @Given /^I have (.*) secret and (.*) token$/, (secret, token, callback)->
     @ink = new ink { secret: secret, token: token}
-    @ink.endpoint = 'api.inkit.dev'
+    #@ink.endpoint = 'api.inkit.dev'
     @code = []
     callback()
 

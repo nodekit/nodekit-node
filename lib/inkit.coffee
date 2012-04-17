@@ -9,7 +9,7 @@ class Ink
     throw 'Please provide your secret key!' unless options['secret']
     @secret = options['secret'].toString()
     @token = options['token'].toString()
-    @endpoint = 'api.inkit.dev'
+    @endpoint = 'api.inkit.org'
     @cache = new cache @secret
     ['haml','html','json','jade','coffeekup'].forEach (method) =>
       @[method] = (view, options = {}, callback = ->) ->

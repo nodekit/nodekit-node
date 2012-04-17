@@ -1,4 +1,4 @@
-{Inkit} = require '../../../source/inkit'
+{Inkit} = require '../../lib/inkit'
 request = require 'request'
 querystring = require 'querystring'
 

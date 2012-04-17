@@ -1,11 +1,12 @@
-## Usage
-```
+### Usage
+```coffeescript
 inkit = require 'inkit'
 
-ink = new inkit options
-
+ink = new inkit { secret: 'xxxx', token: 'xxxx' }
+ink.haml view, {}, (code) ->
+  console.log code
 ```
-## Specs
+### Specs
 Tests use cucumber.js
 
 `cucumber.js`

@@ -1,16 +1,16 @@
 crypto = require 'crypto'
 request = require 'request'
-{Cache} = require './cache'
+cache = require './cache'
 querystring = require 'querystring'
 hogan = require 'hogan'
 
-class Inkit
+class Ink
   constructor: (options) ->
     throw 'Please provide your secret key!' unless options['secret']
     @secret = options['secret'].toString()
     @token = options['token'].toString()
     @endpoint = 'api.inkit.dev'
-    @cache = new Cache @secret
+    @cache = new cache @secret
     ['haml','html','json','jade','coffeekup'].forEach (method) =>
       @[method] = (view, options = {}, callback = ->) ->
         @render view, method, options, callback
@@ -56,4 +56,5 @@ class Inkit
     req = request.get "http://#{@endpoint}/#{path.toString()}?"+querystring.stringify(data), callback
     req.end()
   
-exports.Inkit = Inkit
+module.exports = ->
+  new Ink arguments[0]

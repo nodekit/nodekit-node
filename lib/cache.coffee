@@ -2,7 +2,7 @@ fs = require 'fs'
 crypto = require 'crypto'
 path = require 'path'
 
-exports.Cache = class Cache
+class Cache
   constructor: (secret) ->
     @secret = secret
     @cache_dir = './.ink-cache'
@@ -28,4 +28,7 @@ exports.Cache = class Cache
   hexdigest: (string) ->
     signer = crypto.createHmac('sha256', new Buffer(@secret, 'utf8'))
     signer.update(string.toString()).digest('hex')
+    
+module.exports = ->
+  new Cache arguments[0]
     

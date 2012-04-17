@@ -1,4 +1,4 @@
-{Inkit} = require '../../lib/inkit'
+ink = require '../../lib/inkit'
 request = require 'request'
 querystring = require 'querystring'
 
@@ -18,7 +18,7 @@ test = (type,code) ->
       false
 steps = ->
   @Given /^I have (.*) secret and (.*) token$/, (secret, token, callback)->
-    @ink = new Inkit { secret: secret, token: token}
+    @ink = new ink { secret: secret, token: token}
     @ink.endpoint = 'api.inkit.dev'
     @code = []
     callback()

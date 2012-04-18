@@ -1,3 +1,5 @@
+##nodekit-node
+[![Build Status](https://secure.travis-ci.org/nodekit/nodekit-node.png?branch=master)](http://travis-ci.org/nodekit/nodekit-node)
 ### Usage
 ```coffeescript
 inkit = require 'inkit'

@@ -3,10 +3,8 @@ Feature: API Pull
   As a user
   I want to get the code throught the Api
   
-  Background:
-    Given I have QntGyT3P00T secret and egxM28qoFkP token
-    
   Scenario: Getting a document in Haml
+    Given I have QntGyT3P00T secret and egxM28qoFkP token
      When I render the asd view in:
       | Haml |
       | Html |
@@ -21,10 +19,12 @@ Feature: API Pull
       | Coffeekup |
   
   Scenario: Getting Documents
+    Given I have QntGyT3P00T secret and egxM28qoFkP token
      When I query for documents
      Then I shoud get an array of documents
   
   Scenario: Document not found
+    Given I have QntGyT3P00T secret and egxM28qoFkP token
      When I try to get test view as Haml
      Then I shoud get a 404 response
      
@@ -39,5 +39,6 @@ Feature: API Pull
      Then I shoud get a 400 response
   
   Scenario: Not Modified
+    Given I have QntGyT3P00T secret and egxM28qoFkP token
      When I try to get asd view when not modified
      Then I shoud get a 304 response
